@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+body > div {
+    background: #222;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+#display {
+    width: 100%;
+    padding: 20px;
+    font-size: 32px;
+    text-align: right;
+    border: none;
+    border-radius: 10px;
+    background: #333;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+div div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 25px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    background: #555;
+    color: white;
+}
+
+button:hover {
+    background: #666;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* First button (AC) takes 2 columns */
+div div:first-of-type button:first-child {
+    grid-column: span 2;
+    background: #ff9500;
+}
+
+div div:first-of-type button:first-child:hover {
+    background: #ffaa00;
+}
+
+/* Operation buttons */
+div div:first-of-type button:nth-child(2),
+div div:first-of-type button:nth-child(3),
+div div:first-of-type button:nth-child(4),
+div div:nth-of-type(2) button:nth-child(4),
+div div:nth-of-type(3) button:nth-child(4),
+div div:nth-of-type(4) button:nth-child(4) {
+    background: #ff9500;
+}
+
+div div:first-of-type button:nth-child(2):hover,
+div div:first-of-type button:nth-child(3):hover,
+div div:first-of-type button:nth-child(4):hover,
+div div:nth-of-type(2) button:nth-child(4):hover,
+div div:nth-of-type(3) button:nth-child(4):hover,
+div div:nth-of-type(4) button:nth-child(4):hover {
+    background: #ffaa00;
+}
+
+/* Last row - 0 button takes 2 columns */
+div div:last-of-type {
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+div div:last-of-type button:first-child {
+    grid-column: span 1;
+}

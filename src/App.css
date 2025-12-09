@@ -1,0 +1,5 @@
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: auto !important; /* Lenis will control smooth scroll */
+}
